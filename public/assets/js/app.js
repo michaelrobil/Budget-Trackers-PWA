@@ -23,19 +23,6 @@ useIndexedDb("budget", "budgetStore", "get").then(results => {
   });
 });
 
-// async function getListItems() {
-//   let res = await fetch("/api/budget");
-//   let list = await res.json();
-//   list.forEach(o => {
-//     const oneItem = `<li class="list-group-item">Name: ${o.item}
-//     <span class="ml-4">Price: ${o.price}</span></li>`;
-//     $("#expenses-list").append(oneItem)
-//     const newOne = sub(balanceEl.innerHTML, o.price);
-//     balanceEl.innerHTML = newOne;
-//   });
-// };
-
-// getListItems();
 
 $(function () {
   //on expense

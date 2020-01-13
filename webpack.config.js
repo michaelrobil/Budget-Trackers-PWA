@@ -5,8 +5,7 @@ const path = require("path");
 const config = {
   mode: "development",
   entry: {
-    app:"./public/assets/js/app.js",
-    indexedDb:"./public/assets/js/indexedDb.js"
+    app:"./public/assets/js/app.js"
     },
   output: {
     path: __dirname + "/public/dist",
