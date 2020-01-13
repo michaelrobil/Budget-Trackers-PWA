@@ -1,4 +1,5 @@
-// const budgetEl = document.getElementById("budget");
+import { useIndexedDb } from "./indexedDb";
+
 const priceEl = document.getElementById("price");
 const balanceEl = document.getElementById("balance");
 const expenseEl = document.getElementById("expense-deposit");
@@ -10,29 +11,47 @@ function sub(a, b) {
   return parseInt(a) + parseInt(b)
 };
 
-async function getListItems() {
-  let res = await fetch("/api/budget");
-  let list = await res.json();
-  list.forEach(o => {
-    const oneItem = `<li class="list-group-item">Name: ${o.item}
-    <span class="ml-4">Price: ${o.price}</span></li>`;
+useIndexedDb("budget", "budgetStore", "get").then(results => {
+  console.log(results)
+  results.forEach(o => {
+    console.log(o)
+    const oneItem = `<li class="list-group-item">Name: ${o.name}
+    <span class="ml-4">Price: ${o.value}</span></li>`;
     $("#expenses-list").append(oneItem)
-    const newOne = sub(balanceEl.innerHTML, o.price);
+    const newOne = sub(balanceEl.innerHTML, o.value);
     balanceEl.innerHTML = newOne;
   });
-};
+});
 
-getListItems();
+// async function getListItems() {
+//   let res = await fetch("/api/budget");
+//   let list = await res.json();
+//   list.forEach(o => {
+//     const oneItem = `<li class="list-group-item">Name: ${o.item}
+//     <span class="ml-4">Price: ${o.price}</span></li>`;
+//     $("#expenses-list").append(oneItem)
+//     const newOne = sub(balanceEl.innerHTML, o.price);
+//     balanceEl.innerHTML = newOne;
+//   });
+// };
+
+// getListItems();
 
 $(function () {
   //on expense
   $("#expense").on("click", function (e) {
     e.preventDefault();
-    // addToList(expenseEl.value, priceEl.value);
     let newItem = {
       item: $("#expense-deposit").val().trim(),
       price: "-"+$("#price").val().trim()
     };
+
+    useIndexedDb("budget", "budgetStore", "put", {
+      _id: newItem.item,
+      name: newItem.item,
+      value: newItem.price
+    });
+
     $.ajax("/api/budget", {
       type: "POST",
       data: newItem
@@ -45,11 +64,17 @@ $(function () {
   //on deposite
   $("#deposit").on("click", function (e) {
     e.preventDefault();
-    // addToList(expenseEl.value, priceEl.value);
     let newItem = {
       item: $("#expense-deposit").val().trim(),
       price: $("#price").val().trim()
     };
+
+    useIndexedDb("budget", "budgetStore", "put", {
+      _id: newItem.item,
+      name: newItem.item,
+      value: newItem.price
+    });
+
     $.ajax("/api/budget", {
       type: "POST",
       data: newItem
@@ -63,6 +88,7 @@ $(function () {
   //on reset
   $("#reset").on("click", function (e) {
     e.preventDefault();
+    useIndexedDb("budget", "budgetStore", "clear")
     $.ajax("/api/budget", {
       type: "DELETE",
     });

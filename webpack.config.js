@@ -4,10 +4,13 @@ const path = require("path");
 
 const config = {
   mode: "development",
-  entry: "./public/assets/js/app.js",
+  entry: {
+    app:"./public/assets/js/app.js",
+    indexedDb:"./public/assets/js/indexedDb.js"
+    },
   output: {
     path: __dirname + "/public/dist",
-    filename: "bundle.js"
+    filename: "[name].bundle.js"
   },
   plugins: [
     new SWPrecacheWebpackPlugin({
