@@ -14,7 +14,7 @@ By entering the money amount in the input field and click ‘deposit’ or ‘ex
 - Javascript, jQuery, Ajax
 - Node, Express
 - Heroku
-- Mangodb
+- MongoDB, IndexedDB
 
 ## License
 Unlicense
