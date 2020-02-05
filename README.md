@@ -1,10 +1,30 @@
 # Budget-Trackers-PWA
-Web application allow for offline access and functionality.
-The user will be able to add expenses and deposits to their budget with or without a connection. When entering transactions offline, they should populate the total when brought back online.
-Offline Functionality:
-  Enter deposits offline
-  Enter expenses offline
-  When brought back online:
-    Offline entries will be added to tracker.
-    
-Webpack, mongoose, express, api used to built this application.
+
+## About
+This web application works online and offline.
+This application is intended as a tool for users  who want to track their budget by adding deposits and subtract expenses.
+By entering the money amount in the input field and click ‘deposit’ or ‘expense’, If you want to reset the budget to zero click ‘reset’.
+
+## Contributors
+[Michael Robil](https://github.com/michaelrobil)
+
+## Technology
+- Webpack
+- HTML5, CSS, Bootstrap
+- Javascript, jQuery, Ajax
+- Node, Express
+- Heroku
+- Mangodb
+
+## License
+Unlicense
+
+## How to use this code
+Visit the app site at Heroku below. If you wish to copy and edit the code, you will need to run ```npm install``` to retrieve the necessary dependencies.
+- Application Site: https://glacial-beyond-79290.herokuapp.com/
+
+## Contact
+
+- e-mail: michaelrobil@my-dev.online
+- LinkedIn: https://www.linkedin.com/in/michael-s-robil-60499869/
+
