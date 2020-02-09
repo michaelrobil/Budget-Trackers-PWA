@@ -1,9 +1,9 @@
 # Budget-Trackers-PWA
 
 ## About
-This web application works online and offline.
 How much money do you have to spend this month at coffee shops? How about on clothes? This application is budgeting app that helps you track the spending and plan for purchases.
 By entering the money amount in the input field and click ‘deposit’ or ‘expense’. The user can reset the budget to zero by click on  ‘reset’.
+This web application works online and offline.
 
 # Application screenshot
 
