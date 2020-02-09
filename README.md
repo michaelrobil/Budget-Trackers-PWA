@@ -2,7 +2,7 @@
 
 ## About
 This web application works online and offline.
-This application is budgeting app that helps users track their spending and plan for purchases.
+How much money do you have to spend this month at coffee shops? How about on clothes? This application is budgeting app that helps you track the spending and plan for purchases.
 By entering the money amount in the input field and click ‘deposit’ or ‘expense’. The user can reset the budget to zero by click on  ‘reset’.
 
 # Application Picture
@@ -23,8 +23,6 @@ By entering the money amount in the input field and click ‘deposit’ or ‘ex
 
 ## License
 Unlicense
-
-## How It Works
 
 ## How to use this code
 Visit the app site at Heroku below. If you wish to copy and edit the code, you will need to run ```npm install``` to retrieve the necessary dependencies.
